@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Button, Form, Input, Label } from './ContactForm.styled';
+
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contactsSlice';
+
+import { Button, Form, Input, Label } from './ContactForm.styled';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -34,7 +36,7 @@ export const ContactForm = () => {
   return (
     <Form action="submit" autoComplete="off" onSubmit={handleSubmit}>
       <Label htmlFor="name">
-        Name:
+        <b>Name:</b>
         <Input
           type="text"
           name="name"
@@ -45,7 +47,7 @@ export const ContactForm = () => {
         />
       </Label>
       <Label htmlFor="number">
-        Number:
+        <b>Number:</b>
         <Input
           type="tel"
           name="number"
